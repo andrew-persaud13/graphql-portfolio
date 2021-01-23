@@ -9,7 +9,7 @@ module.exports = {
   },
   env: {
     BASE_URL: !dev
-      ? 'https://persaudgql.herokuapp.com'
+      ? 'https://persaudgql.herokuapp.com/graphql'
       : 'http://localhost:3000/graphql',
   },
 };
