@@ -16,6 +16,11 @@ exports.init = server => {
     store: initSessionStore(),
   };
 
+  const corsConfig = {
+    credentials: true,
+    origin: true,
+  };
+
   if (process.env.NODE_ENV === 'production') {
     server.set('trust proxy', 1);
     sess.cookie.secure = true;
@@ -26,7 +31,7 @@ exports.init = server => {
 
   init(passport); //register strategy
 
-  server.use(cors());
+  server.use(cors(corsConfig));
   server.use(session(sess));
   server.use(passport.initialize()); //put passport functionality on request object
   server.use(passport.session());
