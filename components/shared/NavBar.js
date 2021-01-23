@@ -59,12 +59,12 @@ const AppNavbar = () => {
               {user && (
                 <>
                   <span className='nav-link mr-2'>Welcome {user.username}</span>
-                  <NavDropdown
-                    className='mr-2'
-                    title='Manage'
-                    id='basic-nav-dropdown'
-                  >
-                    {(user.role === 'admin' || user.role === 'instructor') && (
+                  {(user.role === 'admin' || user.role === 'instructor') && (
+                    <NavDropdown
+                      className='mr-2'
+                      title='Manage'
+                      id='basic-nav-dropdown'
+                    >
                       <>
                         <AppLink
                           as={`/instructor/${user._id}/dashboard`}
@@ -77,8 +77,8 @@ const AppNavbar = () => {
                           Create Portfolio
                         </AppLink>
                       </>
-                    )}
-                  </NavDropdown>
+                    </NavDropdown>
+                  )}
                   <AppLink cn=' nav-link btn btn-danger' href='/logout'>
                     Logout
                   </AppLink>
