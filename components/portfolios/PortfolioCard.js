@@ -3,7 +3,7 @@ import { formatDate } from '@/utils/functions';
 
 const PortfolioCard = ({ portfolio }) => {
   return (
-    <div className='card subtle-shadow no-border'>
+    <div className='card subtle-shadow no-border mb-2'>
       <div className='card-body'>
         <h5 className='card-title'>{portfolio.title}</h5>
         <h6 className='card-subtitle mb-2 text-muted'>{portfolio.jobTitle}</h6>
